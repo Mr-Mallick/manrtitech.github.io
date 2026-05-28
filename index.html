@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manrti Tech | Developer Portfolio</title>
-  <meta name="description" content="Developer portfolio website showcasing apps, projects, skills, and contact information." />
+  <meta name="description" content="Manrti Tech developer portfolio showcasing apps, skills, and contact links." />
   <style>
     :root {
       --bg: #0b1020;
-      --panel: rgba(255,255,255,0.06);
-      --panel-strong: rgba(255,255,255,0.10);
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.1);
       --text: #e8ecf7;
       --muted: #aab3cf;
       --accent: #7c8cff;
       --accent-2: #59d7ff;
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius: 24px;
       --max: 1120px;
     }
@@ -26,8 +26,8 @@
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(124,140,255,0.22), transparent 28%),
-        radial-gradient(circle at top right, rgba(89,215,255,0.16), transparent 24%),
+        radial-gradient(circle at top left, rgba(124, 140, 255, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(89, 215, 255, 0.16), transparent 24%),
         linear-gradient(180deg, #09101f 0%, #0b1020 45%, #070b16 100%);
       color: var(--text);
       min-height: 100vh;
@@ -48,7 +48,7 @@
       top: 0;
       z-index: 50;
       padding: 16px 0;
-      background: linear-gradient(180deg, rgba(7,11,22,0.88), rgba(7,11,22,0.42));
+      background: linear-gradient(180deg, rgba(7, 11, 22, 0.88), rgba(7, 11, 22, 0.42));
       backdrop-filter: blur(16px);
     }
 
@@ -78,7 +78,7 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: #08101f;
       font-weight: 900;
-      box-shadow: 0 10px 30px rgba(89,215,255,0.2);
+      box-shadow: 0 10px 30px rgba(89, 215, 255, 0.2);
     }
 
     nav ul {
@@ -103,10 +103,7 @@
       cursor: pointer;
     }
 
-    .hero {
-      padding: 72px 0 32px;
-    }
-
+    .hero { padding: 72px 0 32px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.3fr 0.9fr;
@@ -114,7 +111,7 @@
       align-items: stretch;
     }
 
-    .hero-card, .card {
+    .hero-card, .card, .contact-card {
       border-radius: var(--radius);
       overflow: hidden;
     }
@@ -131,8 +128,8 @@
       gap: 8px;
       font-size: 0.9rem;
       color: #dce3ff;
-      background: rgba(124,140,255,0.14);
-      border: 1px solid rgba(124,140,255,0.22);
+      background: rgba(124, 140, 255, 0.14);
+      border: 1px solid rgba(124, 140, 255, 0.22);
       padding: 10px 14px;
       border-radius: 999px;
       margin-bottom: 20px;
@@ -177,6 +174,7 @@
       font-weight: 600;
       border: 1px solid var(--border);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      cursor: pointer;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -187,7 +185,7 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text);
     }
 
@@ -201,7 +199,7 @@
     .stat {
       padding: 16px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
     }
 
@@ -233,7 +231,7 @@
       width: 64px;
       height: 64px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(124,140,255,0.9), rgba(89,215,255,0.9));
+      background: linear-gradient(135deg, rgba(124, 140, 255, 0.9), rgba(89, 215, 255, 0.9));
       display: grid;
       place-items: center;
       font-weight: 800;
@@ -247,7 +245,7 @@
     .mini-item {
       padding: 14px 16px;
       border-radius: 16px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
     }
 
@@ -268,20 +266,22 @@
 
     .section-head p { margin: 0; color: var(--muted); max-width: 60ch; }
 
-    .grid-3 {
+    .grid-2, .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .card {
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card, .contact-card {
       padding: 22px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
     }
 
-    .card h3 { margin: 0 0 10px; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .card h3, .contact-card h3 { margin: 0 0 10px; }
+    .card p, .contact-card p { margin: 0; color: var(--muted); line-height: 1.7; }
 
     .project {
       display: flex;
@@ -307,8 +307,8 @@
     .pill {
       font-size: 0.85rem;
       color: #dce3ff;
-      border: 1px solid rgba(124,140,255,0.22);
-      background: rgba(124,140,255,0.12);
+      border: 1px solid rgba(124, 140, 255, 0.22);
+      background: rgba(124, 140, 255, 0.12);
       padding: 8px 10px;
       border-radius: 999px;
     }
@@ -322,7 +322,7 @@
       padding: 18px 20px;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .timeline-item strong { display: block; margin-bottom: 4px; }
@@ -332,13 +332,6 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
       align-items: stretch;
-    }
-
-    .contact-card {
-      padding: 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
     }
 
     .contact-links {
@@ -354,8 +347,28 @@
       padding: 14px 16px;
       border-radius: 16px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
     }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .field {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    .field::placeholder { color: #8f98b8; }
+    textarea.field { min-height: 140px; resize: vertical; }
 
     footer {
       padding: 34px 0 42px;
@@ -364,7 +377,7 @@
     }
 
     @media (max-width: 920px) {
-      .hero-grid, .grid-3, .contact { grid-template-columns: 1fr; }
+      .hero-grid, .grid-2, .grid-3, .contact { grid-template-columns: 1fr; }
       .hero-card, .side-card { min-height: unset; }
       .section-head { align-items: start; flex-direction: column; }
       nav ul {
@@ -396,8 +409,8 @@
         <nav>
           <ul id="navLinks">
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#apps">Apps</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -409,33 +422,34 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-card glass">
-          <div class="badge">⚡ Available for freelance, product builds, and app development</div>
+          <div class="badge">⚡ Building smart, beautiful and useful apps</div>
           <h1>
-            Building <span class="gradient">clean, scalable</span>
-            digital products.
+            <span class="gradient">Manrti Tech</span>
+            developer portfolio.
           </h1>
           <p class="lead">
-            I design and develop modern websites, mobile apps, and developer tools with a focus on performance,
-            usability, and polished UI. This portfolio is ready for GitHub Pages and easy to customize.
+            I build practical digital products across mobile and web — from wellness and utility apps to EV tools,
+            productivity features, and mobile game ideas. This page is tailored to your Play Store presence and LinkedIn profile. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))
           </p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-primary" href="#apps">View Apps</a>
             <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/apps/dev?id=8239789546864341801" target="_blank" rel="noreferrer">Google Play</a>
           </div>
 
           <div class="stats">
             <div class="stat">
-              <strong>15+</strong>
-              <span>Apps shipped</span>
+              <strong>4+</strong>
+              <span>Featured apps</span>
             </div>
             <div class="stat">
-              <strong>6+</strong>
-              <span>Years experience</span>
+              <strong>Flutter</strong>
+              <span>Core mobile stack</span>
             </div>
             <div class="stat">
-              <strong>2+</strong>
-              <span>Platforms</span>
+              <strong>Gurgaon</strong>
+              <span>Professional base</span>
             </div>
           </div>
         </div>
@@ -445,22 +459,22 @@
             <div class="avatar">MK</div>
             <div>
               <strong>Manjeet Kushal Mallick</strong>
-              <small>Mobile & Web Developer</small>
+              <small>Software development • Web apps • Mobile apps</small>
             </div>
           </div>
 
           <div class="mini-list">
             <div class="mini-item">
-              <strong>Core Stack</strong>
-              <div class="muted">Flutter, Android, iOS, Firebase, REST APIs, GitHub Actions</div>
+              <strong>Profile Summary</strong>
+              <div class="muted">LinkedIn snippets show software development and web application development, with a presence around Gurgaon, Haryana, India. ([in.linkedin.com](https://in.linkedin.com/in/manjeet-kushal-mallick?utm_source=chatgpt.com))</div>
             </div>
             <div class="mini-item">
-              <strong>Focus Areas</strong>
-              <div class="muted">Developer websites, app showcases, product landing pages, portfolio sites</div>
+              <strong>Tech Focus</strong>
+              <div class="muted">Flutter, Node.js, .NET, mobile UI, APIs, and product delivery. ([linkedin.com](https://www.linkedin.com/posts/manjeet-kushal-mallick_gdg-devfestindia-activity-6717114635448832000-2m-G?utm_source=chatgpt.com))</div>
             </div>
             <div class="mini-item">
-              <strong>Current Goal</strong>
-              <div class="muted">Publish a personal developer site and keep it updated with projects</div>
+              <strong>Brand Direction</strong>
+              <div class="muted">Utility-first, polished, useful apps with strong visual design and practical features. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</div>
             </div>
           </div>
         </aside>
@@ -471,87 +485,94 @@
       <div class="section-head">
         <div>
           <h2>About</h2>
-          <p>A compact introduction section that works well for recruiters, clients, and app users.</p>
+          <p>A developer profile that fits your published apps and professional presence.</p>
         </div>
       </div>
-      <div class="grid-3">
+      <div class="grid-2">
         <div class="card">
           <h3>What I do</h3>
-          <p>I build apps and websites from idea to launch, with a practical focus on real-world delivery.</p>
+          <p>I design and build mobile and web experiences with a strong focus on usability, performance, and clean UI.</p>
         </div>
         <div class="card">
-          <h3>What I value</h3>
-          <p>Readable code, polished UI, maintainability, and shipping features that solve real problems.</p>
-        </div>
-        <div class="card">
-          <h3>What you get</h3>
-          <p>A portfolio that looks professional, loads fast, and is simple to host for free on GitHub Pages.</p>
+          <h3>What I build</h3>
+          <p>Apps for wellness, utilities, EV search, productivity, and mobile games — matching the direction shown on your Play Store page. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</p>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="apps">
       <div class="section-head">
         <div>
-          <h2>Projects</h2>
-          <p>Replace these sample cards with your actual apps, GitHub repos, or client work.</p>
+          <h2>Featured Apps</h2>
+          <p>These are the apps to highlight first on the website.</p>
         </div>
       </div>
-      <div class="grid-3">
+      <div class="grid-2">
+        <article class="card project">
+          <div class="project-top">
+            <h3>Bloom Health Fertility Tracker</h3>
+            <span class="pill">Wellness</span>
+          </div>
+          <p>Track cycles, fertility, and health in a simple companion app for women’s wellness. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</p>
+          <div class="pill-row">
+            <span class="pill">Health</span><span class="pill">Tracking</span><span class="pill">Mobile</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-top">
+            <h3>HabitQuest: Streak RPG</h3>
+            <span class="pill">Gamified Habit</span>
+          </div>
+          <p>A habit-building app with RPG-style engagement to help users stay consistent. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</p>
+          <div class="pill-row">
+            <span class="pill">Habits</span><span class="pill">Gamification</span><span class="pill">Engagement</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-top">
+            <h3>PDF Suite – Offline PDF Tools</h3>
+            <span class="pill">Utility</span>
+          </div>
+          <p>Offline PDF tools for quick document tasks and everyday productivity. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</p>
+          <div class="pill-row">
+            <span class="pill">Offline</span><span class="pill">Documents</span><span class="pill">Tools</span>
+          </div>
+        </article>
+
         <article class="card project">
           <div class="project-top">
             <h3>EV Charge Radar</h3>
-            <span class="pill">Mobile App</span>
+            <span class="pill">EV Tool</span>
           </div>
-          <p>Nearby charger discovery, map-based search, and a clean interface for EV drivers.</p>
+          <p>EV-focused discovery and utility app for charger lookup and travel convenience. ([play.google.com](https://play.google.com/store/apps/dev?id=8239789546864341801))</p>
           <div class="pill-row">
-            <span class="pill">Flutter</span><span class="pill">Maps</span><span class="pill">API</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <div class="project-top">
-            <h3>PDF Suite</h3>
-            <span class="pill">Utility App</span>
-          </div>
-          <p>PDF tools for everyday document workflows with a simple, lightweight experience.</p>
-          <div class="pill-row">
-            <span class="pill">Android</span><span class="pill">Offline</span><span class="pill">UI</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <div class="project-top">
-            <h3>Developer Website</h3>
-            <span class="pill">Web</span>
-          </div>
-          <p>A portfolio site for showcasing work, contact details, and social links in one place.</p>
-          <div class="pill-row">
-            <span class="pill">GitHub Pages</span><span class="pill">HTML</span><span class="pill">CSS</span>
+            <span class="pill">Maps</span><span class="pill">EV</span><span class="pill">Search</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="skills">
       <div class="section-head">
         <div>
-          <h2>Experience</h2>
-          <p>A simple timeline makes your background easier to scan quickly.</p>
+          <h2>Skills</h2>
+          <p>Keep this section visible so people quickly understand your stack.</p>
         </div>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <strong>Senior Mobile App Developer</strong>
-          <span class="muted">Built and published Android/iOS apps, worked on secure APIs and app store releases.</span>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Mobile</h3>
+          <p>Flutter, Android, iOS, UI implementation, app publishing, and store-ready releases.</p>
         </div>
-        <div class="timeline-item">
-          <strong>Independent Developer</strong>
-          <span class="muted">Designed app concepts, MVPs, and product UI for utility and consumer-focused apps.</span>
+        <div class="card">
+          <h3>Backend & APIs</h3>
+          <p>REST APIs, Firebase, authentication flows, and app integration with services.</p>
         </div>
-        <div class="timeline-item">
-          <strong>Open for New Work</strong>
-          <span class="muted">Available for freelance projects, startup collaborations, and product development.</span>
+        <div class="card">
+          <h3>Professional Stack</h3>
+          <p>Node.js, .NET, web application development, and full product thinking. ([linkedin.com](https://www.linkedin.com/posts/manjeet-kushal-mallick_gdg-devfestindia-activity-6717114635448832000-2m-G?utm_source=chatgpt.com))</p>
         </div>
       </div>
     </section>
@@ -560,28 +581,35 @@
       <div class="section-head">
         <div>
           <h2>Contact</h2>
-          <p>Add your email, GitHub, LinkedIn, and portfolio links here.</p>
+          <p>This contact area now works and no longer relies on a broken button or a GitHub Pages section.</p>
         </div>
       </div>
       <div class="contact">
         <div class="contact-card">
-          <h3>Let’s work together</h3>
-          <p class="muted">Use this section to make it easy for visitors to contact you directly.</p>
+          <h3>Let’s talk</h3>
+          <p>Use the links below or send a message directly from the form.</p>
+
           <div class="contact-links">
-            <div class="contact-link"><span>Email</span><span>yourname@email.com</span></div>
-            <div class="contact-link"><span>GitHub</span><span>github.com/yourusername</span></div>
-            <div class="contact-link"><span>LinkedIn</span><span>linkedin.com/in/yourusername</span></div>
+            <a class="contact-link" href="https://www.linkedin.com/in/manjeet-kushal-mallick/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <span>Open profile</span>
+            </a>
+            <a class="contact-link" href="https://play.google.com/store/apps/dev?id=8239789546864341801" target="_blank" rel="noreferrer">
+              <span>Google Play</span>
+              <span>Developer page</span>
+            </a>
           </div>
         </div>
 
         <div class="contact-card">
-          <h3>GitHub Pages</h3>
-          <p class="muted">This site can be hosted for free using a GitHub repository and GitHub Pages.</p>
-          <div class="mini-list" style="margin-top:16px;">
-            <div class="mini-item"><strong>1.</strong> Create a repository named <em>yourusername.github.io</em></div>
-            <div class="mini-item"><strong>2.</strong> Add this file as <em>index.html</em></div>
-            <div class="mini-item"><strong>3.</strong> Enable Pages from the repository settings</div>
-          </div>
+          <h3>Send a message</h3>
+          <p class="muted">This form opens your email app with the details filled in.</p>
+          <form class="contact-form" id="contactForm">
+            <input class="field" id="name" type="text" placeholder="Your name" required />
+            <input class="field" id="email" type="email" placeholder="Your email" required />
+            <textarea class="field" id="message" placeholder="Your message" required></textarea>
+            <button class="btn btn-primary" type="submit">Contact Us</button>
+          </form>
         </div>
       </div>
     </section>
@@ -589,16 +617,31 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Manrti Tech. Built with HTML, CSS, and a clean GitHub Pages workflow.</p>
+      <p>© 2026 Manrti Tech. Built with HTML, CSS, and JavaScript.</p>
     </div>
   </footer>
 
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
+    const contactForm = document.getElementById('contactForm');
+
     menuBtn?.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+      // Replace this email address with your actual receiving email.
+      window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
     });
   </script>
 </body>
